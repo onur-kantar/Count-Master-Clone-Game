@@ -1,7 +1,7 @@
 # Count-Master-Demo-Game
 This is the work I did in **4 days** to create a clone of **Count Master** game. I tried to create some basic mechanics used in the game.
 
-## Mechanics:
+## Mechanics
 
 * Movement
   * Swipe movement
@@ -17,10 +17,10 @@ This is the work I did in **4 days** to create a clone of **Count Master** game.
   * You lost
     * Play again
 
-## Gameplay:
+## Gameplay
 
 ![](VideosAndPhotos/Count-Master-Demo-Game-Gameplay-Resized.gif)
 
-## Original game:
+## Original game
 * [Google Play](https://play.google.com/store/apps/details?id=freeplay.crowdrun.com)
 * [App Store](https://apps.apple.com/us/app/count-masters-crowd-runner-3d/id1568245971)
