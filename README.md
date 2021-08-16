@@ -1,5 +1,5 @@
 # Count-Master-Demo-Game
-This is the work I did to create a clone of the Count Master game. I tried to create some basic mechanics used in the game.
+This is the work I did in 4 days to create a clone of Count Master game. I tried to create some basic mechanics used in the game.
 
 ## Mechanics:
 
