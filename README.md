@@ -11,8 +11,8 @@ This is the work I did in **4 days** to create a clone of **Count Master** game.
   * Reducing the number of members of the team
   * Build a tower
   * Sit on the stairs
-* UI
-  * You won
+## UI
+  * You win
     * Go to next level
   * You lost
     * Play again
