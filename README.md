@@ -21,6 +21,6 @@ This is the work I did in **4 days** to create a clone of **Count Master** game.
 
 ![](VideosAndPhotos/Count-Master-Demo-Game-Gameplay-Resized.gif)
 
-## Original game
+## Original Game
 * [Google Play](https://play.google.com/store/apps/details?id=freeplay.crowdrun.com)
 * [App Store](https://apps.apple.com/us/app/count-masters-crowd-runner-3d/id1568245971)
