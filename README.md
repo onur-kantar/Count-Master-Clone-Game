@@ -1,5 +1,5 @@
 # Count-Master-Demo-Game
-This is the work I did in **4 days** to create a clone of **Count Master** game. I tried to create some basic mechanics used in the game.
+This is the work I did in **4 days** to create a clone of **Count Master** game. I tried to create some basic mechanics used in the game. Made with **[Unity](https://unity.com/)**.
 
 ## Mechanics
 
@@ -18,6 +18,7 @@ This is the work I did in **4 days** to create a clone of **Count Master** game.
     * Play again
 
 ## Gameplay
+Collect as many teammates as possible and try not to fall down. The more teammates you have, the bigger tower you will get.
 
 ![](VideosAndPhotos/Count-Master-Demo-Game-Gameplay-Resized.gif)
 
