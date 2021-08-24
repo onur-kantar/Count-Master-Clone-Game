@@ -19,6 +19,10 @@ public class TeamMember : MonoBehaviour
     }
     public void LeaveTeam()
     {
+        StartCoroutine(LeaveTeamCoroutine());   
+    }
+    IEnumerator LeaveTeamCoroutine()
+    {
         transform.parent = null;
         GetComponent<SphereCollider>().enabled = false;
         GetComponent<Rigidbody>().drag = 0;
@@ -35,6 +39,9 @@ public class TeamMember : MonoBehaviour
         GetComponent<MoveToDirection>().enabled = false;
         leader.DecreaseHumanCount();
 
-        Destroy(gameObject, 3);
+        yield return new WaitForSeconds(3);
+
+        //Destroy(gameObject, 3);
+        gameObject.SetActive(false);
     }
 }

@@ -29,6 +29,8 @@ public class HumanCreator : MonoBehaviour
     {
         if (!humanCreatorController.GetIsTaken())
         {
+            
+
             Transform parent = other.transform.parent;
             if (operation == Operation.Sum)
             {
@@ -43,9 +45,16 @@ public class HumanCreator : MonoBehaviour
                 Vector3 position = new Vector3(Random.Range(parent.position.x - 0.5f, parent.position.x + 0.5f),
                                                 parent.position.y,
                                                 Random.Range(parent.position.z - 0.5f, parent.position.z + 0.5f));
-                GameObject go = Instantiate(human, position, Quaternion.identity);
-                go.transform.SetParent(parent, true);
-                go.GetComponent<TeamMember>().JoinTeam();
+
+                GameObject human = ObjectPooler.SharedInstance.GetPooledObject("Human");
+                if (human != null)
+                {
+                    human.transform.position = position;
+                    human.SetActive(true);
+                }
+                //GameObject go = Instantiate(this.human, position, Quaternion.identity);
+                human.transform.SetParent(parent);
+                human.GetComponent<TeamMember>().JoinTeam();
             }
             humanCreatorController.Take();
         }

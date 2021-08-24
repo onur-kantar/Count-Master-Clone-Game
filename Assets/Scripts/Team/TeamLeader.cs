@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class TeamLeader : MonoBehaviour
 {
-    public Manager manager;
+    public GameManager manager;
     [SerializeField] TMP_Text humanCountText;
     [HideInInspector] public int humanCount;
     int finishedHumanCount;

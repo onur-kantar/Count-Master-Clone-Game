@@ -1173,6 +1173,7 @@ GameObject:
   m_Component:
   - component: {fileID: 995097791}
   - component: {fileID: 995097790}
+  - component: {fileID: 995097792}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1194,7 +1195,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainPlayerMoveToDirection: {fileID: 1071528828}
   menu: {fileID: 1533145149}
-  mainMenu: {fileID: 1789673189}
   winMenu: {fileID: 954787288}
   loseMenu: {fileID: 2141150488}
 --- !u!4 &995097791
@@ -1211,6 +1211,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &995097792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 995097789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 894c52348da2add4c977155fb83b2184, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemsToPool:
+  - amountToPool: 50
+    objectToPool: {fileID: 5982191893598750395, guid: fbc783d884a48cd46885b4126aa1086a, type: 3}
+    shouldExpand: 1
+  pooledObjects:
+  - {fileID: 0}
 --- !u!1 &1014435938
 GameObject:
   m_ObjectHideFlags: 0

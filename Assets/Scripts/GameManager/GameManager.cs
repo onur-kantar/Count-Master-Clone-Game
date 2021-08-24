@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Manager : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
     [SerializeField] MoveToDirection mainPlayerMoveToDirection;
     [SerializeField] GameObject menu;
-    [SerializeField] GameObject mainMenu;
+    //[SerializeField] GameObject mainMenu;
     [SerializeField] GameObject winMenu;
     [SerializeField] GameObject loseMenu;
 
