@@ -9,6 +9,8 @@ This is the work I did in **4 days** to create a clone of **Count Master** game.
 - [ ] DOTween to the bridge
 - [X] Low poly collider
 - [ ] Prefab everything
+- [ ] Shaking when moving
+
 
 ## Mechanics
 
