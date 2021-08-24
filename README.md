@@ -1,5 +1,11 @@
 # Count-Master-Clone-Game
 This is the work I did in **4 days** to create a clone of **Count Master** game. I tried to create some basic mechanics used in the game. Made with **[Unity](https://unity.com/)**.
+## Deficiencies In The Project
+- [ ] Enemy community
+- [ ] Optimization
+- [ ] Team community (with sine and cosine pattern)
+- [ ] Object pooling
+- [ ] New level without new scene
 
 ## Mechanics
 
