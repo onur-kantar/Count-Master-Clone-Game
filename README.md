@@ -10,6 +10,7 @@ This is the work I did in **4 days** to create a clone of **Count Master** game.
 - [X] Low poly collider
 - [ ] Prefab everything
 - [ ] Shaking when moving
+- [ ] Constant class
 
 
 ## Mechanics
