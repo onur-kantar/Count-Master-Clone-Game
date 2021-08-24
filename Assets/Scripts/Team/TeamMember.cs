@@ -24,7 +24,7 @@ public class TeamMember : MonoBehaviour
     IEnumerator LeaveTeamCoroutine()
     {
         transform.parent = null;
-        GetComponent<SphereCollider>().enabled = false;
+        GetComponent<Collider>().enabled = false;
         GetComponent<Rigidbody>().drag = 0;
         GetComponent<Rigidbody>().useGravity = true;
         GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;

@@ -81,7 +81,7 @@ public class BuildTower : MonoBehaviour
                 Transform child = transform.GetChild(i);
                 if (child.CompareTag("Human"))
                 {
-                    child.GetComponent<SphereCollider>().isTrigger = true;
+                    child.GetComponent<Collider>().isTrigger = true;
                     child.GetComponent<MoveToDirection>().enabled = false;
                     child.transform.parent = tower.transform;
                     child.transform.localPosition = new Vector3(tempTowerHumanCount / 2, 0, 0);
