@@ -1,6 +1,7 @@
 # Count-Master-Clone-Game
 This is the work I did in **4 days** to create a clone of **Count Master** game. I tried to create some basic mechanics used in the game. Made with **[Unity](https://unity.com/)**.
 ## Deficiencies In The Project
+Deficiencies determined by the game designer.
 - [ ] Enemy community
 - [ ] Optimization
 - [X] Team community (with sine and cosine pattern)
@@ -10,7 +11,7 @@ This is the work I did in **4 days** to create a clone of **Count Master** game.
 - [X] Low poly collider
 - [X] Prefab everything
 - [X] Don't shaking when moving
-- [ ] Constant class
+- [X] Constants class
 
 
 ## Mechanics
