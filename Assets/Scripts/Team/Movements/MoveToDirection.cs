@@ -2,14 +2,19 @@
 
 public abstract class MoveToDirection : MonoBehaviour
 {
+    Vector3 direction;
     Movement movement;
     private void Awake()
     {
         movement = GetComponent<Movement>();
     }
-    void Update()
+    private void Update()
     {
-        movement.Move(CalculateDirection());
+        direction = CalculateDirection();
+    }
+    void FixedUpdate()
+    {
+        movement.Move(direction);
     }
     public abstract Vector3 CalculateDirection();
 }

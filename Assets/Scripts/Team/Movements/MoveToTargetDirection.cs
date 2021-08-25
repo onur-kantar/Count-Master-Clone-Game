@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveToParentDirection : MoveToDirection
+public class MoveToTargetDirection : MoveToDirection
 {
+    [HideInInspector] public Vector3 target;
     public override Vector3 CalculateDirection()
     {
-        return Vector3.zero;
+        return target;
     }
 }

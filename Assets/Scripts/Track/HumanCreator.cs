@@ -29,7 +29,6 @@ public class HumanCreator : MonoBehaviour
     {
         if (!humanCreatorController.GetIsTaken())
         {
-            
 
             Transform parent = other.transform.parent;
             if (operation == Operation.Sum)

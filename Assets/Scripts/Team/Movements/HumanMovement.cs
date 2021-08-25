@@ -8,6 +8,6 @@ public class HumanMovement : Movement
 
     public override void Move(Vector3 direction)
     {
-        transform.localPosition = Vector3.Lerp(transform.localPosition, direction, speed * Time.deltaTime);
+        transform.localPosition = Vector3.MoveTowards(transform.localPosition, direction, speed * Time.fixedDeltaTime);
     }
 }

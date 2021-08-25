@@ -25,7 +25,7 @@ public class MoveToSwipeDirection : MoveToDirection
         {
             startPoint = cam.ScreenToViewportPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, cam.nearClipPlane));
             inputSpeed = GetSwipeSpeed(startPoint.x, endPoint.x);
-            endPoint = Vector3.Lerp(endPoint, startPoint, 2 * Time.deltaTime);
+            endPoint = Vector3.Lerp(endPoint, startPoint, 5 * Time.deltaTime);
             return new Vector3(inputSpeed, 0, 0);
         }
         return Vector3.zero;
