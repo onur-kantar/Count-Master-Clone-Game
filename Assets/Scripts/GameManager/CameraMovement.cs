@@ -5,6 +5,7 @@ using UnityEngine;
 public class CameraMovement : MonoBehaviour
 {
     [SerializeField] Transform target;
+    [SerializeField] float lookSpeed;
     [HideInInspector] public Vector3 lookAtDeflection;
     Vector3 offset;
     Transform cam;
@@ -22,12 +23,14 @@ public class CameraMovement : MonoBehaviour
         transform.position = target.position + offset;
         if (look)
         {
-            cam.rotation = Quaternion.RotateTowards(cam.rotation, Quaternion.LookRotation(target.position - cam.position + lookAtDeflection), Time.deltaTime * 5);
+            cam.rotation = Quaternion.RotateTowards(cam.rotation,
+                                                    Quaternion.LookRotation(target.position - cam.position + lookAtDeflection),
+                                                    Time.deltaTime * lookSpeed);
         }
     }
     public void EndGameAnim(Transform target)
     {
-        anim.Play("CameraEndGame");
+        anim.Play(Constants.END_GAME_CAMERA_ANIM);
         this.target = target;
         offset = transform.position - target.position;
         look = true;

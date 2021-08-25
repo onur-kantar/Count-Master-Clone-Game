@@ -7,9 +7,24 @@ public class TeamLeader : MonoBehaviour
 {
     public GameManager manager;
     [SerializeField] TMP_Text humanCountText;
+    [SerializeField] int defaultHumanCount;
     [HideInInspector] public int humanCount;
     int finishedHumanCount;
-
+    private void Start()
+    {
+        CreateDefaultHuman();
+    }
+    void CreateDefaultHuman()
+    {
+        for (int i = 0; i < defaultHumanCount; i++)
+        {
+            GameObject human = ObjectPooler.SharedInstance.GetPooledObject(Constants.HUMAN_TAG);
+            human.transform.position = transform.position;
+            human.transform.SetParent(transform);
+            human.GetComponent<TeamMember>().JoinTeam();
+            human.SetActive(true);
+        }
+    }
     public void IncreaseFinishedHumanCount()
     {
         finishedHumanCount++;

@@ -8,6 +8,6 @@ public class FinishLine : MonoBehaviour
     {
         Transform parent = other.transform.parent;
         parent.GetComponent<BuildTower>().Build();
-        GetComponent<BoxCollider>().enabled = false;
+        GetComponent<Collider>().enabled = false;
     }
 }

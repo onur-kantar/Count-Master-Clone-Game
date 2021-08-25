@@ -155,7 +155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8934c76be48278f4b9eb654c33edfa04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  tempSpeed: 2
 --- !u!114 &7654270940318637243
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -169,7 +169,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   leader: {fileID: 0}
-  target: {x: 0, y: 0, z: 0}
 --- !u!95 &5708406792733135431
 Animator:
   serializedVersion: 3

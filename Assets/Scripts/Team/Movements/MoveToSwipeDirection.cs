@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class MoveToSwipeDirection : MoveToDirection
 {
+    [SerializeField] float swiperStopTolerance;
+    [SerializeField] float endPointSpeed;
     Vector3 startPoint;
     Vector3 endPoint;
     float inputSpeed;
@@ -25,7 +27,7 @@ public class MoveToSwipeDirection : MoveToDirection
         {
             startPoint = cam.ScreenToViewportPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, cam.nearClipPlane));
             inputSpeed = GetSwipeSpeed(startPoint.x, endPoint.x);
-            endPoint = Vector3.Lerp(endPoint, startPoint, 5 * Time.deltaTime);
+            endPoint = Vector3.Lerp(endPoint, startPoint, endPointSpeed * Time.deltaTime);
             return new Vector3(inputSpeed, 0, 0);
         }
         return Vector3.zero;
@@ -33,7 +35,7 @@ public class MoveToSwipeDirection : MoveToDirection
     float GetSwipeSpeed(float startPoint, float endPoint)
     {
         float inputSpeed = startPoint - endPoint;
-        if (Mathf.Abs(inputSpeed) > 0.02f)
+        if (Mathf.Abs(inputSpeed) > swiperStopTolerance)
         {
             return inputSpeed;
         }

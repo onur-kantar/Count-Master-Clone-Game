@@ -5,6 +5,8 @@ using UnityEngine.Animations;
 
 public class BuildTower : MonoBehaviour
 {
+    [SerializeField] int perRowMaxHumanCount;
+    [SerializeField] float distanceBetweenHumans;
     List<int> towerCountList;
     List<GameObject> towerList;
     CameraMovement camAnims;
@@ -26,7 +28,7 @@ public class BuildTower : MonoBehaviour
     public  void Build()
     {
         GetComponent<TeamLeader>().TextActiveFalse();
-        GetComponent<MoveToDirection>().enabled = false;
+        GetComponent<MoveToDirection>().StopMoveToDirection();
         FillTowerList();
         StartCoroutine(BuildTowerCoroutine());
         camAnims.EndGameAnim(towerList[0].transform);
@@ -34,9 +36,8 @@ public class BuildTower : MonoBehaviour
     void FillTowerList()
     {
         int humanCount = GetComponent<TeamLeader>().humanCount;
-        int rowMaxHumanCount = 5;
 
-        for (int i = 1; i <= rowMaxHumanCount; i++)
+        for (int i = 1; i <= perRowMaxHumanCount; i++)
         {
             if (humanCount < i)
             {
@@ -45,7 +46,7 @@ public class BuildTower : MonoBehaviour
             humanCount -= i;
             towerCountList.Add(i);
         }
-        for (int i = rowMaxHumanCount; i > 0; i--)
+        for (int i = perRowMaxHumanCount; i > 0; i--)
         {
             if (humanCount >= i)
             {
@@ -79,12 +80,14 @@ public class BuildTower : MonoBehaviour
             for (int i = 0; i < transform.childCount; i++)
             {
                 Transform child = transform.GetChild(i);
-                if (child.CompareTag("Human"))
+                if (child.CompareTag(Constants.HUMAN_TAG))
                 {
                     child.GetComponent<Collider>().isTrigger = true;
-                    child.GetComponent<MoveToDirection>().enabled = false;
+                    child.GetComponent<MoveToDirection>().StopMoveToDirection();
+                    child.GetComponent<Movement>().StopMovement();
+
                     child.transform.parent = tower.transform;
-                    child.transform.localPosition = new Vector3(tempTowerHumanCount / 2, 0, 0);
+                    child.transform.localPosition = new Vector3(tempTowerHumanCount * distanceBetweenHumans, 0, 0);
                     sum += child.transform.position;
                     tempTowerHumanCount++;
                     i--;
@@ -99,6 +102,6 @@ public class BuildTower : MonoBehaviour
             towerId++;
             yield return new WaitForSeconds(0.1f);
         }
-        move = true;
+        //move = true;
     }
 }

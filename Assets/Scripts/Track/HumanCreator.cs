@@ -6,7 +6,6 @@ using UnityEngine;
 public class HumanCreator : MonoBehaviour
 {
     enum Operation { Sum, Multiplication };
-    [SerializeField] GameObject human;
     [SerializeField] Operation operation;
     [SerializeField] float value;
     [SerializeField] TMP_Text text;
@@ -27,9 +26,9 @@ public class HumanCreator : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
+        float randomPositionRange = 0.5f;
         if (!humanCreatorController.GetIsTaken())
         {
-
             Transform parent = other.transform.parent;
             if (operation == Operation.Sum)
             {
@@ -41,19 +40,15 @@ public class HumanCreator : MonoBehaviour
             }
             for (int i = 0; i < count; i++)
             {
-                Vector3 position = new Vector3(Random.Range(parent.position.x - 0.5f, parent.position.x + 0.5f),
+                Vector3 position = new Vector3(Random.Range(parent.position.x - randomPositionRange, parent.position.x + randomPositionRange),
                                                 parent.position.y,
-                                                Random.Range(parent.position.z - 0.5f, parent.position.z + 0.5f));
+                                                Random.Range(parent.position.z - randomPositionRange, parent.position.z + randomPositionRange));
 
-                GameObject human = ObjectPooler.SharedInstance.GetPooledObject("Human");
-                if (human != null)
-                {
-                    human.transform.position = position;
-                    human.SetActive(true);
-                }
-                //GameObject go = Instantiate(this.human, position, Quaternion.identity);
+                GameObject human = ObjectPooler.SharedInstance.GetPooledObject(Constants.HUMAN_TAG);
+                human.transform.position = position;
                 human.transform.SetParent(parent);
                 human.GetComponent<TeamMember>().JoinTeam();
+                human.SetActive(true);
             }
             humanCreatorController.Take();
         }

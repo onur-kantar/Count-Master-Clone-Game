@@ -5,15 +5,20 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] MoveToDirection mainPlayerMoveToDirection;
+    [SerializeField] GameObject mainPlayer;
+    MoveToDirection mainPlayerMoveToDirection;
+    Movement mainPlayerMovement;
     [SerializeField] GameObject menu;
-    //[SerializeField] GameObject mainMenu;
     [SerializeField] GameObject winMenu;
     [SerializeField] GameObject loseMenu;
-
+    private void Start()
+    {
+        mainPlayerMoveToDirection = mainPlayer.GetComponent<MoveToDirection>();
+        mainPlayerMovement = mainPlayer.GetComponent<Movement>();
+    }
     public void StartGame()
     {
-        mainPlayerMoveToDirection.enabled = true;
+        mainPlayerMoveToDirection.StartMoveToDirection();
         CloseAllMenus();
     }
     public void Replay()
@@ -27,13 +32,15 @@ public class GameManager : MonoBehaviour
     public void Win()
     {
         CloseAllMenus();
-        mainPlayerMoveToDirection.enabled = false;
+        mainPlayerMoveToDirection.StopMoveToDirection();
+        mainPlayerMovement.StopMovement();
         winMenu.SetActive(true);
     }
     public void Lose()
     {
         CloseAllMenus();
-        mainPlayerMoveToDirection.enabled = false;
+        mainPlayerMoveToDirection.StopMoveToDirection();
+        mainPlayerMovement.StopMovement();
         loseMenu.SetActive(true);
     }
     void CloseAllMenus()

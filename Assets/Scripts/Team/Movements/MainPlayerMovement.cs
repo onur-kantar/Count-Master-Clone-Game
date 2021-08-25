@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class MainPlayerMovement : Movement
 {
-    [SerializeField] float horizontalSpeed;
-    [SerializeField] float verticleSpeed;
-    [SerializeField] float movementLimitX;
+    [SerializeField] float tempHorizontalSpeed;
+    [SerializeField] float tempVerticleSpeed;
+    float horizontalSpeed;
+    float verticleSpeed;
     Rigidbody rb;
     
     private void Start()
@@ -15,13 +16,17 @@ public class MainPlayerMovement : Movement
     }
     public override void Move(Vector3 direction)
     {
-        direction.x *= horizontalSpeed;
-        //if (Mathf.Abs(direction.x * Time.deltaTime + transform.position.x) > movementLimitX)
-        //{
-        //    direction.x = 0;
-        //}
-        //transform.Translate(new Vector3(direction.x, 0, verticleSpeed) * Time.deltaTime);
-        //rb.MovePosition(transform.position + new Vector3(direction.x, 0, verticleSpeed) * Time.deltaTime);
-        rb.velocity = new Vector3(direction.x, 0, verticleSpeed);
+        rb.velocity = new Vector3(direction.x * horizontalSpeed, 0, verticleSpeed);
+    }
+    public override void StopMovement()
+    {
+        horizontalSpeed = 0;
+        verticleSpeed = 0;
+        rb.velocity = Vector3.zero;
+    }
+    public override void StartMovement()
+    {
+        horizontalSpeed = tempHorizontalSpeed;
+        verticleSpeed = tempVerticleSpeed;
     }
 }

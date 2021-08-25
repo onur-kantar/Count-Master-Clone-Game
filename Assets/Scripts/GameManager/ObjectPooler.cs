@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ObjectPooler : MonoBehaviour
 {
@@ -8,18 +9,19 @@ public class ObjectPooler : MonoBehaviour
     [SerializeField] List<ObjectPoolItem> itemsToPool;
     [HideInInspector] public List<GameObject> pooledObjects;
 
-    void Awake()
+    private void Awake() // TODO: Tek sahne yapýnca buna gerek yok
+    {
+        SceneManager.sceneLoaded += OnLevelLoaded;
+    }
+    private void OnLevelLoaded(Scene scene, LoadSceneMode loadSceneMode)
     {
         SharedInstance = this;
-    }
-    void Start()
-    {
         pooledObjects = new List<GameObject>();
         foreach (ObjectPoolItem item in itemsToPool)
         {
             for (int i = 0; i < item.amountToPool; i++)
             {
-                GameObject obj = (GameObject)Instantiate(item.objectToPool);
+                GameObject obj = Instantiate(item.objectToPool);
                 obj.SetActive(false);
                 pooledObjects.Add(obj);
             }
@@ -40,7 +42,7 @@ public class ObjectPooler : MonoBehaviour
             {
                 if (item.shouldExpand)
                 {
-                    GameObject obj = (GameObject)Instantiate(item.objectToPool);
+                    GameObject obj = Instantiate(item.objectToPool);
                     obj.SetActive(false);
                     pooledObjects.Add(obj);
                     return obj;
