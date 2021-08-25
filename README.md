@@ -3,12 +3,12 @@ This is the work I did in **4 days** to create a clone of **Count Master** game.
 ## Deficiencies In The Project
 - [ ] Enemy community
 - [ ] Optimization
-- [ ] Team community (with sine and cosine pattern)
+- [X] Team community (with sine and cosine pattern)
 - [X] Object pooling
 - [ ] New level without new scene
 - [ ] DOTween to the bridge
 - [X] Low poly collider
-- [ ] Prefab everything
+- [X] Prefab everything
 - [X] Don't shaking when moving
 - [ ] Constant class
 
