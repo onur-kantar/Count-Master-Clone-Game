@@ -95,7 +95,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   manager: {fileID: 0}
   humanCountText: {fileID: 8412507221759554872}
-  defaultHumanCount: 5
+  defaultHumanCount: 1
   humanCount: 0
 --- !u!114 &8412507221534588874
 MonoBehaviour:
@@ -110,7 +110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   perRowMaxHumanCount: 5
-  distanceBetweenHumans: 0.2
+  distanceBetweenHumans: 0.5
 --- !u!114 &4865214058790579129
 MonoBehaviour:
   m_ObjectHideFlags: 0

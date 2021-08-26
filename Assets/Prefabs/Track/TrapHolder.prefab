@@ -44,7 +44,6 @@ GameObject:
   - component: {fileID: 5285836900918163625}
   - component: {fileID: 5285836900918163627}
   - component: {fileID: 5285836900918163636}
-  - component: {fileID: 5285836900918163637}
   - component: {fileID: 7395764477142715853}
   m_Layer: 0
   m_Name: Trap
@@ -142,22 +141,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 3, z: 1}
   m_Center: {x: -1, y: 2, z: 0}
---- !u!111 &5285836900918163637
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5285836900918163638}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 9e44415a4e607a84083f1c692e759d5d, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: 9e44415a4e607a84083f1c692e759d5d, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!114 &7395764477142715853
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,3 +153,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f043add2502b1f34fb0c729f992cd479, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveDuration: 1
