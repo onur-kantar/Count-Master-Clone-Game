@@ -7,7 +7,7 @@ Deficiencies determined by the game designer.
 - [X] Team community (with sine and cosine pattern)
 - [X] Object pooling
 - [ ] New level without new scene
-- [ ] DOTween to the bridge
+- [X] DOTween to the bridge
 - [X] Low poly collider
 - [X] Prefab everything
 - [X] Don't shaking when moving
