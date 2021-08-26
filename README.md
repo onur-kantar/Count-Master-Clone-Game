@@ -4,7 +4,7 @@ This is the work I did in **4 days** to create a clone of **Count Master** game.
 Deficiencies determined by the game designer.
 - [ ] Enemy community
 - [ ] Optimization
-- [X] Team community (with sine and cosine pattern)
+- [X] Team community (with sin and cos pattern)
 - [X] Object pooling
 - [ ] New level without new scene
 - [X] DOTween to the bridge
