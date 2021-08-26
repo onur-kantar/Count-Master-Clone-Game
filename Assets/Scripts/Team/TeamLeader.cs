@@ -8,7 +8,7 @@ public class TeamLeader : MonoBehaviour
     public GameManager manager;
     [SerializeField] TMP_Text humanCountText;
     [SerializeField] int defaultHumanCount;
-    [HideInInspector] public int humanCount;
+    public int humanCount;
     int finishedHumanCount;
     private void Start()
     {

@@ -18,7 +18,7 @@ public class BuildTower : MonoBehaviour
         towerList = new List<GameObject>();
         camAnims = Camera.main.transform.parent.GetComponent<CameraMovement>();
     }
-    void Update()
+    void FixedUpdate()
     {
         if (move)
         {
@@ -29,6 +29,8 @@ public class BuildTower : MonoBehaviour
     {
         GetComponent<TeamLeader>().TextActiveFalse();
         GetComponent<MoveToDirection>().StopMoveToDirection();
+        GetComponent<Movement>().StopMovement();
+
         FillTowerList();
         StartCoroutine(BuildTowerCoroutine());
         camAnims.EndGameAnim(towerList[0].transform);
@@ -102,6 +104,7 @@ public class BuildTower : MonoBehaviour
             towerId++;
             yield return new WaitForSeconds(0.1f);
         }
-        //move = true;
+        GetComponent<Movement>().StartMovement();
+        move = true;
     }
 }
